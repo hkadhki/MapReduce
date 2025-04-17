@@ -36,7 +36,7 @@ public class FileHandler {
             }
             log.info("Successfully read file: {}", fileName);
         } catch (IOException e) {
-            log.warn("Error reading file: {}", fileName);//TODO
+            log.warn("Error reading file: {}", fileName);
         }
         return builder.toString().trim();
     }
@@ -58,7 +58,7 @@ public class FileHandler {
                 }
                 log.info("Successfully wrote temp file: mr-{}-{}.txt", taskMapId, id);
             } catch (IOException e) {
-                log.warn("Error writing to temp file: mr-{}-{}.txt", taskMapId, id);//TODO
+                log.warn("Error writing to temp file: mr-{}-{}.txt", taskMapId, id);
             }
         });
     }
@@ -83,7 +83,7 @@ public class FileHandler {
                     }
                 }
             } catch (IOException e) {
-                log.warn("Error reduce temp file: mr-{}-{}.txt", i, id);//TODO
+                log.warn("Error reduce temp file: mr-{}-{}.txt", i, id);
             }
         }
 
@@ -105,7 +105,7 @@ public class FileHandler {
             writer.write(key + " " + result);
             writer.newLine();
         } catch (IOException e) {
-            log.warn("Error writing result to file ");//TODO
+            log.warn("Error writing result to file ");
         } finally {
             lock.unlock();
         }
